@@ -1,0 +1,151 @@
+.collection {
+    margin-top: 20px;
+
+    &_header {
+        text-align: center;
+        padding-bottom: 10px;
+
+        a {
+            font-weight: 500;
+        }
+
+        h3 {
+            font-size: 22px;
+            color: $main-color;
+            font-weight: 600;
+        }
+    }
+
+    &_child-category {
+        @include flex(center,center);
+        gap: 10px;
+        margin-bottom: 10px;
+        background: #f8f8f8;
+        padding: 20px 10px;
+
+        &_item > a {
+            border-color: $main-color;
+            color: $main-color;
+            font-weight: 500;
+        }
+    }
+
+    &_container {
+        margin-top: 20px;
+        @include flex(flex-start, space-between);
+        gap: 40px;
+    }
+
+    &_main {
+        flex: 5;
+
+        &_header {
+            @include flex(center,space-between);
+            margin-bottom: 10px;
+
+            &>p {
+                color: #7a7a9d;
+                font-size: 16px;
+                display: inline-block;
+                vertical-align: top;
+                line-height: 1;
+                font-weight: 600;
+            }
+        }
+
+        &_footer {
+            margin: 30px 0 30px;
+            background: #f8f8f8;
+            padding: 20px 30px 40px;
+            position: relative;
+            height: 150px;
+            overflow: hidden;
+            font-weight: 500;
+
+            p {
+                &:nth-child(2),
+                &:nth-child(3) {
+                    text-align: center;
+                    margin-top: 10px;
+                }
+            }
+
+            img {
+                margin-top: 30px;
+            }
+
+            svg {
+                color: red;
+            }
+
+            &_btn {
+                position: absolute;
+                bottom: 5px;
+                left: 50%;
+                transform: translateX(-50%);
+                @include flex(center,center);
+                font-weight: 600;
+                font-size: 13px;
+                color: $main-color; 
+                cursor: pointer;
+            }
+
+            &.active {
+                height: max-content;
+            }
+        }
+    }
+}
+
+.sort {
+    @include flex(center,flex-start);
+    position: relative;
+
+    &:hover .sort_body {
+        display: block;
+    }
+
+    &>span {
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+    &_header {
+        @include flex(center,space-between);
+        font-size: 15px;
+        margin-left: 15px;
+        width: 230px;
+        line-height: 41px;
+        border: 1px solid #dde1ef;
+        border-radius: 4px;
+        padding: 0 15px;
+        cursor: pointer;
+        font-weight: 500;
+    }
+
+    &_body {
+        position: absolute;
+        z-index: 100;
+        width: 230px;
+        background-color: #fff;
+        right: 0;
+        border: 1px solid #dde1ef;
+        border-radius: 4px;
+        display: none;
+    }
+
+    &_item {
+        padding: 5px 10px;
+        cursor: pointer;
+
+        &.active {
+            color: $main-color;
+            @include flex(center,space-between);
+
+            & > svg {
+                color: red;
+            }
+        }
+    }
+    
+}

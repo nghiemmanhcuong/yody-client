@@ -1,0 +1,105 @@
+.input {
+    display: block;
+    box-sizing: border-box;
+    background-color: #fff;
+    color: #333;
+    margin-bottom: 10px;
+    min-height: 46px;
+
+    &_select {
+        cursor: pointer;
+        font-weight: 500;
+        color: #9a9a9a;
+        font-size: 12px;
+        position: relative;
+        @include flex(center, space-between);
+
+        &:hover > .input_select_dropdown {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        &.disabled {
+            pointer-events: none;
+            background-color: #eeeeee;
+        }
+
+        &_dropdown {
+            position: absolute;
+            width: 100%;
+            height: 200px;
+            z-index: 10;
+            background-color: #ffffff;
+            border: 1px solid #9a9a9a;
+            border-radius: 0 0 5px 5px;
+            top: 42px;
+            left: 0;
+            right: 0;
+            overflow-y: scroll;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.1s ease;
+
+            &_item {
+                font-size: 13px;
+                padding: 5px;
+                color: #333;
+                transition: all 0.1s ease;
+
+                &.active,
+                &:hover {
+                    background-color: $main-color;
+                    color: white;
+                }
+            }
+        }
+
+        &_text {
+            line-height: 1;
+
+            & > span {
+                display: block;
+                color: #333;
+            }
+        }
+
+        &_icon {
+            @include flex(center, flex-end);
+
+            &_hr {
+                min-height: 24px;
+                border-right: 1px solid #dadada;
+                margin-right: 10px;
+            }
+        }
+    }
+
+    &.error {
+        .input_select,
+        input,
+        textarea {
+            border: 2px red solid;
+        }
+    }
+
+    &_select,
+    input,
+    textarea {
+        border: 1px #d9d9d9 solid;
+        border-radius: 3px;
+        outline: none;
+        padding: 12px 7px;
+        width: 100%;
+        transition: border 0.1s ease;
+
+        &:focus {
+            border: 2px $main-color solid;
+        }
+
+        &::placeholder {
+            font-weight: 500;
+            color: #9a9a9a;
+            font-size: 12px;
+        }
+    }
+}

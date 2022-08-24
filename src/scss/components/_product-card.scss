@@ -1,0 +1,111 @@
+.product-card {
+    position: relative;
+    overflow-x: hidden;
+    height: 405px;
+
+    &:hover .product-card_img > a > img {
+        transform: scale(1.1);
+    }
+
+    &_img {
+        overflow: hidden;
+        position: relative;
+
+        & > a > img {
+            transition: transform 0.4s ease;
+        }
+    }
+
+    &_add-cart {
+        position: absolute;
+        bottom:0;
+        right: 0;
+        cursor: pointer;
+    }
+
+    &_info {
+        padding: 5px 0 10px;
+
+        p {
+            display:-webkit-box;
+            -webkit-line-clamp:1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            word-break: break-word;
+            font-weight: 500;
+        }
+
+        &_price {
+            &_real {
+                font-weight: 600;
+                font-size: 16px;
+                color: #fcaf17;
+                display: inline-block;
+                margin-right: 10px;
+            }
+
+            &_sale {
+                text-decoration: line-through;
+                font-size: 14px;
+                color: #7a7a9d;
+                line-height: 17px;
+                display: inline;
+                font-weight: 500;
+            }
+        }
+    }
+
+    &_heart {
+        position:absolute;
+        top: 10px;
+        right: 10px;
+        width: 30px;
+        height: 30px;
+        border-radius: 100rem;
+        background-color:#ffffff;
+        @include flex(center,center);
+        cursor: pointer;
+
+        &.active {
+            & > svg {
+                color: #fb98a8;
+            }
+        }
+
+        & > svg {
+            color: #8A8A8F;
+        }
+    }
+
+    &_sale {
+        position:absolute;
+        top: 10px;
+        left: 0;
+        width: 60px;
+        height: 30px;
+        background-color:#EE4D2D;
+        color: #ffffff;
+        @include flex(center,center);
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+    &_images {
+        position: absolute;
+        
+        &_wrapper {
+            gap: 10px;
+            overflow: hidden;
+            @include flex(center, flex-start);
+        }
+
+        &_item {
+            width: 30px;
+            overflow: hidden;
+            height: 30px;
+            border-radius: 100rem;
+            cursor: pointer;
+        }
+    }
+}

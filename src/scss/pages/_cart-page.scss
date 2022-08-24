@@ -1,0 +1,201 @@
+.cart-page {
+    padding-bottom: 50px;
+    padding-top: 30px;
+    background-color: #F8F8F8;
+
+    &_wrapper {
+        @include flex(flex-start, space-between);
+        gap: 50px;
+    }
+
+    &_left {
+        flex: 3;
+        background-color: #fff;
+        border-radius: 5px;
+
+        &_header {
+            @include flex(center,space-between);
+            margin-bottom: 15px;
+            padding: 10px 25px;
+
+            &_text {
+                @include flex(center,flex-start);
+                
+                & > h5,
+                & > p {
+                    font-size: 17px;
+                }
+
+                & > h5 {
+                    font-weight: 600;
+                    margin-right: 5px;
+                }
+
+                & > p {
+                    font-weight: 500;
+                    color: #7A7A9C;
+                }
+            }
+
+            &_btn > a {
+                @include flex(center,center);
+                background-color: #FDEEEA;
+                font-weight: 500;
+                padding: 10px 20px;
+                border-radius:4px;
+                color: $main-color;
+
+                & > svg {
+                    margin-left: 5px;
+                    color: red;
+                }
+            }
+        }
+
+        &_product {
+            padding-bottom: 10px;
+
+            &_header {
+                @include flex(center,space-between);
+                padding-bottom: 15px;
+                padding-right: 25px;
+                padding-left: 25px;
+
+                & > p {
+                    font-weight: 600;
+
+                    &:nth-child(1) {
+                        flex: 0 0 55%;
+                    }
+                }
+            }
+
+            &_list > * ~ * {
+                margin-top: 20px;
+            }
+
+            &_item {
+                @include flex(flex-start, flex-start);
+                position: relative;
+                padding: 0 10px;
+            }
+
+            &_img > img {
+                height: 150px;
+            }
+
+            &_info {
+                padding-left: 15px;
+                flex: 1;
+                @include flex(flex-start, space-between);
+
+                & > div {
+                    max-width:330px;
+
+                    & > h5 {
+                        font-weight: 500;
+                        font-size: 15px;
+                        margin-bottom: 10px;
+                    }
+
+                    & > div {
+                        background-color: #F8F8F8;
+                        padding: 5px 15px;
+                        border-radius:40px;
+                        display: inline-block;
+
+                        & > span {
+                            font-size: 13px;
+                            font-weight: 500;
+
+                            &:nth-child(2) {
+                                padding: 0 7px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &_price {
+                color: $main-color;
+                font-weight: 600;
+                font-size: 17px;
+            }
+
+            &_quantity {
+                @include flex(center,center);
+                line-height:24px;
+                border: 1px solid #7a7a9d;
+                border-radius: 40px;
+
+                & > button {
+                    background-color: transparent;
+                    cursor: pointer;
+                }
+
+                & > p {
+                    padding: 0 10px;
+                    border-right: 1px solid #7a7a9d;
+                    border-left: 1px solid #7a7a9d;
+                }
+            }
+
+            &_delete {
+                position: absolute;
+                bottom:5px;
+                left: 50%;
+                transform: translateX(-50%);
+                color: #dd011b;
+                @include flex(center, flex-start);
+                cursor: pointer;
+                font-size: 15px;
+
+                & > svg {
+                    margin-right: 3px;
+                }
+            }
+        }
+    }
+
+    &_right {
+        flex: 1.2;
+        background-color: #fff;
+        padding: 20px;
+        border-radius:5px;
+
+        & > div {
+            @include flex(center,space-between);
+            margin-bottom: 15px;
+
+            & > p {
+                &:nth-child(1) {
+                    font-weight: 500;
+                    font-size: 15px;
+                }
+
+                &:nth-child(2) {
+                    font-size: 19px;
+                    color: red;
+                    font-weight: 600;
+                }
+            }
+        }
+
+        & > a {
+            display: block;
+            text-align: center;
+            line-height:44px;
+            background-color: $main-color;
+            color: #fff;
+            font-weight: 700;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            font-size: 18px;
+        }
+
+        & > p {
+            font-weight: 500;
+            font-size: 13px;
+        }
+    }
+}

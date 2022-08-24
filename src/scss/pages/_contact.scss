@@ -1,0 +1,118 @@
+.contact {
+    padding-top: 30px;
+    margin-bottom: 50px;
+
+    &_header {
+        text-align: center;
+        margin-bottom: 20px;
+
+        &_breadcrumb {
+            @include flex(center,center);
+            font-size: 15px;
+            margin-bottom: 10px;
+
+            & > * {
+                padding: 0 7px;
+                font-weight: 500;
+            }
+
+            & > p {
+                color: $main-color;
+            }
+
+            & > a:hover {
+                color: $main-color;
+            }
+        }
+
+        & > h5 {
+            font-size: 32px;
+            font-weight: 600;
+        }
+    }
+
+    &_shop-info {
+        margin-bottom: 20px;
+
+        &_item {
+            @include flex(flex-start, flex-start);
+            background-color:#F7F7F7;
+            border-radius: 5px;
+            padding: 10px 8px;
+
+            &_icon {
+                @include flex(center,center);
+                background-color:$main-color;
+                width: 40px;
+                height: 40px;
+                border-radius: 100rem;
+                margin-right: 10px;
+
+                & > svg {
+                    color: #fff;
+                }
+            }
+
+            &_text {
+
+                & > h5 {
+                    font-size: 14px;
+                    font-weight: 600;
+                }
+
+                & > p {
+                    font-size: 14px;
+                }
+
+                & > p > a:hover {
+                    color: $main-color;
+                }
+            }
+        }
+    }
+
+    &_wrapper {
+        @include flex(flex-start, space-between);
+        gap: 30px;
+    }
+
+    &_form {
+        flex: 1;
+
+        &_group {
+            margin-bottom: 15px;
+
+            & > label {
+                font-weight: 600;
+                font-size: 13px;
+                display: block;
+                margin-bottom: 5px;
+
+                & > span {
+                    color: red;
+                    padding-left: 5px;
+                }
+            }
+
+            & > input,
+            & > textarea {
+                padding: 13px;
+                background-color: #F7F7F7;
+                width: 100%;
+                border-radius:1px;
+            }
+        } 
+
+        & > button {
+            background-color: $main-color;
+            color: #fff;
+            font-weight: 500;
+            font-size: 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 150px;
+            line-height:41px;
+        }
+    }
+
+}

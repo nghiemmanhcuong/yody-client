@@ -1,0 +1,36 @@
+@import './_varialbles';
+@import './breakpoints';
+@import './mixins';
+@import './base';
+
+// components
+@import './components/header';
+@import './components/footer';
+@import './components/button';
+@import './components/loading';
+@import './components/product-card';
+@import './components/blog-card';
+@import './components/services';
+@import './components/filters';
+@import './components/pagination';
+@import './components/send-evaluate';
+@import './components/blog-page-card';
+@import './components/cart';
+@import './components/input';
+@import './components/add-address-modal';
+
+// pages
+@import './pages/home';
+@import './pages/fashion';
+@import './pages/collection';
+@import './pages/product';
+@import './pages/blog';
+@import './pages/uniform';
+@import './pages/shop';
+@import './pages/checkout';
+@import './pages/account';
+@import './pages/contact';
+@import './pages/page';
+@import './pages/order-success';
+@import './pages/blog-detail';
+@import './pages/cart-page';

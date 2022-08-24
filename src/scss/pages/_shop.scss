@@ -1,0 +1,190 @@
+.shop {
+    padding-top: 30px;
+    padding-right:15px;
+    padding-left:15px;
+    margin-bottom: 50px;
+
+    &_breadcrumb {
+        text-align: center;
+
+        ul {
+            @include flex(center,center);
+
+            & > span {
+                display: inline-block;
+                margin: 0 10px;
+            }
+
+            li {
+                font-weight: 500;
+
+                & > a:hover {
+                    color: $main-color;
+                }
+            }
+        }
+    }
+
+    &_title {
+        text-align: center;
+        font-size: 20px;
+        font-weight: 600;
+        margin-top:5px;
+        color: $main-color;
+    }
+
+    &_system {
+        margin-bottom: 30px;
+        margin-top: 40px;
+
+        &_item {
+            display: block;
+            padding: 25px 30px;
+            color: #FFF;
+            border-radius: 4px;
+
+            p {
+                font-weight: 500;
+                font-size: 17px;
+            }
+
+            b {
+                font-size: 34px;
+            }
+        }
+    }
+    
+    &_container {
+        @include flex(flex-start,space-between);
+        gap: 30px;  
+    }
+
+    &_map {
+        flex: 1.8;
+
+        iframe {
+            width: 100%;
+            height: 620px;
+        }
+    }
+
+    &_info {
+        flex: 1;
+
+        &_search {
+            background: #F2F2F2;
+            color: #7A7A9D;
+            padding: 18px 30px 22px;
+            border: 1px solid #DDE1EF;
+
+            &_item {
+                span {
+                    display:block;
+                    margin-bottom: 5px;
+                    font-weight: 500;
+                }
+
+                &_input {
+                    background-color: #ffffff;
+                    line-height:40px;
+                    padding: 0 10px;
+                    border: 1px solid #DDE1EF;
+                    border-radius: 4px;
+
+                    & > input::placeholder {
+                        color: #7A7A9D;
+                        font-weight: 400;
+                    }
+                }
+
+                &:nth-child(1) > .shop_info_search_item_input {
+                    @include flex(center,space-between);
+                    cursor: pointer;
+                }
+            }
+        }
+
+        &_list {
+            border: 1px solid #DDE1EF;
+            border-top: 0;
+            padding: 5px 7px 5px 20px;
+            font-size: 16px;
+            height: 508px;
+            overflow: scroll;
+
+            & > * ~ * {
+                border-top: 1px solid #DDE1EF;
+            }
+        }
+
+        &_item {
+            @include flex(center,space-between);
+            padding: 15px 10px;
+
+            &_detail {
+                flex: 1;
+
+                h5 {
+                    color: #fcaf17;
+                    font-size: 18px;
+                    display: block;
+                    margin-bottom: 5px;
+                    font-weight: 600;
+                }
+
+                & > * ~ * {
+                    margin-bottom: 10px;
+                }
+
+                & > div {
+                    @include flex(center,flex-start);
+
+                    & > div {
+                        width: 32px;
+                        height: 32px;
+                        border-radius: 100rem;
+                        border: 1px solid #DDE1EF;
+                        @include flex(center,center);
+                    }
+
+                    & > span {
+                        flex: 1;
+                        display: block;
+                        padding-left: 5px;
+                    }
+                }
+            }
+
+            &_btn {
+                width: 200px;
+                @include flex(center,center);
+
+                button {
+                    @include flex(center,center);
+                    padding: 0 20px;
+                    line-height: 32px;
+                    border-radius: 16px;
+                    color: #fcaf17;
+                    cursor: pointer;
+                    background:#FDEEEA;
+                    font-size: 15px;
+
+                    svg {
+                        color: red;
+                        margin-right: 5px;
+                    }
+
+                    &:hover {
+                        color: #ffffff;
+                        background: $main-color;
+
+                        svg {
+                            color: #ffffff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+}

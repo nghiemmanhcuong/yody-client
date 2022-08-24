@@ -1,0 +1,114 @@
+.send-evaluate {
+    max-width: 1000px;
+    width: 700px;
+    padding: 24px 33px 29px;
+    background: #fff;
+    box-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 5px; 
+    position: relative;
+
+    &_header {
+        text-align: center; 
+        margin-bottom: 10px;
+        
+        p {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        h5 {
+            font-size: 20px;
+            font-weight: 600;
+        }
+    }
+
+    &_form {
+        &_item {
+            @include flex(flex-end,flex-start);
+            margin-bottom: 10px;
+
+            p {
+                font-size: 16px;
+                font-weight: 500;
+            }
+        }
+
+        &_starts {
+            font-size: 24px;
+            color: $main-color;
+            margin-left: 10px;
+
+            i {
+                display: inline-block;
+                margin-right: 5px;
+                cursor: pointer;
+            }
+        }
+
+        &_input {
+            margin-bottom: 10px;
+
+            label {
+                margin: 0;
+                background: #fff;
+                border: 1px solid #c4cdd5;
+                border-radius: 5px;
+                line-height: 42px;
+                padding: 0 13px;
+                @include flex(center,flex-start);
+                font-size: 15px;
+                color: #969b9f;
+                font-weight: 500;
+                cursor: pointer;
+
+                svg {
+                    height: 30px;
+                    color: #030d78;
+                    margin-right: 10px;
+                }
+            }
+
+            input,
+            textarea {
+                margin: 0;
+                background: #fff;
+                border: 1px solid #c4cdd5;
+                border-radius: 5px;
+                line-height: 42px;
+                padding: 0 13px;
+                width: 100%;
+
+                &::placeholder {
+                    font-weight: 400;
+                    color: #7A7A9C;
+                }
+            }
+        }
+
+        &_btn {
+            @include flex(center,center);
+            margin-top: 20px;
+            
+            button {
+                cursor: pointer;
+                background-color: #030d78;
+                border-color: #030d78;
+                box-sizing: border-box;
+                border-radius: 3px;
+                font-size: 14px;
+                color: #fff;
+                height: 36px;
+                line-height: 36px;
+                padding: 0 17px;
+            }
+        }
+    }
+
+    &_close {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        cursor: pointer;
+    }
+}

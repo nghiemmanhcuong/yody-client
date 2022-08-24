@@ -1,0 +1,307 @@
+.checkout {
+    display: flex;
+    min-height: 100vh;
+
+    &_left {
+        padding: 28px 28px 28px 250px;
+        flex: 2;
+    }
+
+    &_right {
+        padding: 28px 200px 28px 28px;
+        flex: 1.1;
+        background-color: #e7e9fb;
+    }
+
+    &_logo {
+        @include flex(center, center);
+        margin-bottom: 20px;
+
+        img {
+            height: 55px;
+        }
+    }
+
+    &_header {
+        @include flex(flex-end, space-between);
+        margin-bottom: 15px;
+
+        h3 {
+            font-size: 18px;
+        }
+
+        & > a,
+        & > button {
+            color: $main-color;
+            @include flex(center, flex-end);
+            font-weight: 600;
+
+            svg {
+                margin-right: 3px;
+            }
+        }
+
+        & > button {
+            background-color:transparent;
+            cursor: pointer;
+        }
+    }
+
+    &_payment {
+        &_transport {
+            margin-bottom: 20px;
+        }
+
+        &_item {
+            @include flex(center, space-between);
+            border: 1px #d9d9d9 solid;
+            padding: 12px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+
+            &.error {
+                border: 2px red solid;
+            }
+
+            &_left {
+                @include flex(center, flex-start);
+
+                & > p {
+                    font-weight: 500;
+                    color: #545454;
+                    font-size: 13px;
+                }
+            }
+
+            &_right {
+                & > h5 {
+                    font-size: 13px;
+                    font-weight: 700;
+                }
+
+                & > svg {
+                    color: $main-color;
+                }
+            }
+
+            &_circle {
+                width: 18px;
+                height: 18px;
+                border-radius: 100rem;
+                @include flex(center, center);
+                margin-right: 7px;
+                border: 1px #d9d9d9 solid;
+                transition:  all 0.3s ease;
+
+                &.active {
+                    background-color: $main-color;
+                    border: none;
+                }
+
+                & > div {
+                    width: 5px;
+                    height: 5px;
+                    border-radius: 100rem;
+                    background-color: white;
+                }
+            }
+        }
+    }
+
+    &_note {
+        margin-top: 100px;
+        padding-top: 50px;
+        border-top: 1px solid #dde1ef;
+        text-align: right;
+        color: #201f53;
+        font-weight: 500;
+
+        span {
+            font-weight: bold;
+        }
+    }
+
+    &_product {
+        padding: 20px 0;
+        border-top: 1px solid #eff0fd;
+        border-bottom: 1px solid #eff0fd;
+
+        & > * ~ * {
+            margin-top: 10px;
+        }
+
+        &_item {
+            @include flex(center, space-between);
+
+            &_left {
+                @include flex(flex-start, flex-start);
+            }
+
+            &_img {
+                position: relative;
+                margin-right: 15px;
+                background-color: white;
+                border-radius: 1px solid #ddd;
+                border-radius: 3px;
+
+                img {
+                    height: 55px;
+                    width: 53px;
+                    object-fit: contain;
+                }
+
+                & > div {
+                    position: absolute;
+                    top: -10px;
+                    right: -10px;
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 100rem;
+                    @include flex(center, center);
+                    background-color: $main-color;
+                    font-size: 12px;
+                    font-weight: 600;
+                }
+            }
+
+            &_info {
+                flex: 1;
+
+                h5 {
+                    margin-bottom: 3px;
+                }
+
+                & > div {
+                    font-size: 11px;
+                    color: #969696;
+                    font-weight: 600;
+
+                    & > span:nth-child(2) {
+                        padding: 0 3px;
+                    }
+                }
+            }
+
+            &_total {
+                font-weight: 500;
+            }
+        }
+    }
+
+    &_discount {
+        margin-top: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #eff0fd;
+        @include flex(center, space-between);
+
+        &_input {
+            position: relative;
+            flex: 1;
+            height: 44px;
+            background-color: white;
+            border-radius:5px;
+            @include flex(flex-end, flex-start);
+
+            &.active > span {
+                top: 12px;
+                font-size: 11px;
+            }
+
+            span {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 10px;
+                color: #999999;
+                font-size: 13px;
+                font-weight: 600;
+                pointer-events: none;
+                transition: all 0.2s ease;
+            }
+
+            input {
+                border: none;
+                outline: none;
+                background-color: transparent;
+                height: 100%;
+                width: 100%;
+                padding-left: 10px;
+                padding-top: 12px;
+                transition: all 0.2s ease;
+                border-radius:5px;
+
+                &:focus {
+                    outline: 2px solid $main-color;
+
+                    & + span {
+                        top: 12px;
+                        font-size: 11px;
+                    }
+                }
+            }
+        }
+
+        &_button {
+            width: 150px;
+            height: 44px;
+            margin-left: 10px;
+            border-radius: 5px;
+            background-color: $main-color;
+            color: black;
+            cursor: pointer;
+            font-weight: 600;
+
+            &.disabled {
+                pointer-events: none;
+                opacity: 0.5;
+            }
+        }
+    }
+
+    &_price {
+        padding-top: 20px;
+        padding-bottom: 10px;
+        font-weight: 500;
+        border-bottom: 1px solid #eff0fd;
+
+        &>div {
+            @include flex(center,space-between);
+            margin-bottom: 10px;
+        }
+    }
+
+    &_total {
+        padding-top: 15px;
+
+        & > div {
+            @include flex(center,space-between);
+            margin-bottom: 15px;
+
+            & > a {
+                color: $main-color;
+                font-weight: 600;
+                @include flex(center,flex-start);
+            }
+
+            & > button {
+                height: 44px;
+                background-color:$main-color;
+                color: black;
+                font-weight: 600;
+                border-radius: 5px;
+                width: 120px;
+                cursor: pointer;
+            }
+
+            & > p {
+                font-size: 16px;
+                font-weight: 600;
+            }
+
+            & > h5 {
+                font-size: 18px;
+                color: $main-color;
+            }
+        }
+    }
+}

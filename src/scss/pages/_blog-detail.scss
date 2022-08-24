@@ -1,0 +1,105 @@
+.blog-detail {
+    background: #FDEEEA;
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+
+    &_wrapper {
+        background: #ffffff;
+        padding: 0 30px 50px;
+        border-radius: 20px;
+    }
+
+    &_image {
+        width: 876px;
+    }
+
+    &_main {
+        max-width:876px;
+    }
+
+    &_title {
+        margin-bottom: 10px;
+        margin-top: -15px;
+        font-size: 34px;
+        color: #22215b;
+    }
+
+    &_desc {
+        font-weight: 500;
+        font-style: italic;
+        font-size: 15px;
+        margin-bottom: 10px;
+        letter-spacing: 0.5px;
+    }
+
+    &_info {
+        @include flex(center, flex-start);
+        margin-bottom: 15px;
+
+        p {
+            font-weight: 500;
+            font-size: 15px;
+        }
+    }
+
+    &_created {
+        @include flex(center, flex-start);
+        margin-left: 100px;
+        color: #7a7a9d;
+        font-size: 15px;
+
+        span {
+            display: inline-block;
+            margin-left: 5px;
+        }
+    }
+
+    &_content img {
+        width: 100%;
+        object-fit: cover;
+        margin: 5px 0;
+    }
+
+    &_relate {
+        margin-top: 50px;
+
+        &_button {
+            margin-top: 20px;
+            @include flex(center,center);
+        }
+    }
+}
+
+.blog-detail_relate_blog {
+    &:hover > .swiper .swiper-button-next{
+        right: 10px;
+    }
+
+    &:hover > .swiper .swiper-button-prev{
+        left: 10px;
+    }
+
+    & > .swiper .swiper-button-next {
+        background-image: url('https://bizweb.sapocdn.net/100/438/408/themes/863105/assets/next_bst.svg');
+        right: -40px;
+    }
+
+    & > .swiper .swiper-button-prev {
+        background-image: url('https://bizweb.sapocdn.net/100/438/408/themes/863105/assets/prev_bst.svg');
+        left: -40px;
+    }
+
+    & > .swiper .swiper-button-prev,
+    & > .swiper .swiper-button-next {
+        width: 34px;
+        height: 34px;
+        background-size: contain;
+        transition: all .3s;
+        top: calc(50% - 30px);
+    }
+
+    & > .swiper .swiper-button-prev::after,
+    & > .swiper .swiper-button-next::after{
+        display: none;
+    }
+}

@@ -1,0 +1,142 @@
+.filter {
+    flex: 1;
+
+    &_header {
+        @include flex(center, space-between);
+        cursor: pointer;
+        color: #333333;
+
+        span {
+            font-size: 16px;
+            font-weight: 500;
+        }
+    }
+
+    &_item {
+        margin-bottom: 5px;
+    }
+
+    &_body {
+        margin-top: 10px;
+        @include flex(flex-start, flex-start);
+        flex-wrap: wrap;
+        gap: 5px;
+        margin-bottom: 5px;
+        overflow: scroll;
+        transition: all 0.5s ease;
+        height: 0;
+
+        
+
+        &-category.active,
+        &-size.active {
+            height: 120px;
+        }
+
+        &-material.active {
+            height: 280px;
+        }
+
+        &-color.active {
+            height: 205px;
+        }
+
+        &-price.active {
+            height: 200px;
+        }
+
+        &-color {
+            .filter_body_item {
+                font-size: 13px;
+                line-height: 30px;
+            }
+
+            &_box {
+                width: 20px;
+                height: 20px;
+                border-radius: 100rem;
+                margin-right: 5px;
+            }
+
+            &_item {
+                @include flex(center, flex-start);
+            }
+        }
+
+        &_item {
+            background: #f2f2f2;
+            border-radius: 4px;
+            color: #7a7a9d;
+            padding: 0 12px;
+            line-height: 33px;
+            border: 1px #f2f2f2 solid;
+            cursor: pointer;
+            font-size: 14px;
+            position: relative;
+            overflow: hidden;
+
+            &:hover,
+            &.active {
+                background: #fff;
+                color: #fcaf17;
+                border-color: #fcaf17;
+            }
+
+            &.active::after {
+                content: '';
+                background: 0 0;
+                height: 22px;
+                width: 22px;
+                position: absolute;
+                top: -2px;
+                right: -2px;
+                transform: initial;
+                border-left: 24px solid transparent;
+                border-right: 0 solid transparent;
+                border-top: 24px solid #fcaf17;
+            }
+
+            &.active::before {
+                content: '';
+                background: url('https://bizweb.sapocdn.net/100/438/408/themes/863105/assets/x-white.svg');
+                color: #fff;
+                position: absolute;
+                width: 8px;
+                height: 8px;
+                top: 1px;
+                right: 1px;
+                z-index: 9;
+                line-height: 1;
+                font-size: 10px;
+            }
+        }
+    }
+
+    &_price_item {
+        @include flex(center, flex-start);
+        cursor: pointer;
+        margin-bottom: 5px;
+
+        &_box {
+            width: 15px;
+            height: 15px;
+            border: 1px #c3c2f0 solid;
+            border-radius: 3px;
+            margin-right: 5px;
+            transition: all 0.1s ease;
+
+            &.active {
+                background-color: #2A2A86;
+                border: 1px #2A2A86 solid;
+                
+                & > svg {
+                    color: #fff;
+                }
+            }
+        }
+
+        span {
+            color: #333333;
+        }
+    }
+}

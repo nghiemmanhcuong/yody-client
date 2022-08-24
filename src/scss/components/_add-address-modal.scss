@@ -1,0 +1,63 @@
+.add-address-modal {
+    position:fixed;
+    inset:0;
+    background: rgba(0,0,0,.5);
+    @include flex(center,center);
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.1s ease;
+
+    &.active {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    &_form {
+        width: 40%;
+        background-color: #fff;
+        border-radius:10px;
+
+        &_header {
+            @include flex(center,space-between);
+            padding: 0 25px;
+            line-height:52px;
+
+            &>h5 {
+                font-size: 16px;
+            }
+
+            &>svg {
+                cursor: pointer;
+            }
+        }
+
+        &_input {
+            border-top: 1px solid #dde1ef;
+            padding: 20px 25px;
+        }
+
+        &_btn {
+            text-align: center;
+
+            &_cancel,
+            &_submit {
+                height: 46px;
+                line-height:46px;
+                font-weight: 600;
+                font-size: 17px;
+                border-radius:4px;
+                cursor: pointer;
+            }
+
+            &_submit {
+                background-color: $main-color;
+                color: #fff;
+            }
+
+            &_cancel {
+                background-color: #FDEEEA;
+                color: $main-color;
+            }
+        }
+    }
+}

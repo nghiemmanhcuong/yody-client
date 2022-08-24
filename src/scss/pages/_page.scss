@@ -1,0 +1,80 @@
+.page {
+    padding-top: 20px;
+    padding-bottom: 30px;
+    
+    &_breadcrumb {
+        @include flex(center,center);
+        font-weight: 500;
+        font-size: 15px;
+        margin-bottom: 10px;
+
+        & > span {
+            padding: 0 7px;
+        }
+
+        & > p {
+            color: $main-color;
+        }
+
+        & > a:hover {
+            color: $main-color;
+        }
+    }
+
+    &_title {
+        font-size: 26px;
+        font-weight: 500;
+        margin-bottom: 10px;
+
+        &-sub {
+            font-weight: 500;
+            font-size: 17px;
+            margin-bottom: 7px;
+        }
+    }
+
+    &_list {
+        list-style: disc;
+        padding-inline-start: 30px;
+        font-size: 14px;
+        font-weight: 400;
+        margin-bottom: 10px;
+        margin-top: 5px;
+
+        &-title {
+            font-weight: 500;
+            font-size: 20px;
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+
+        &-number {
+            &_item {
+                font-size: 18px;
+                font-weight: 500;
+            }
+        }
+    }
+
+    &_item {
+        margin-top: 3px;
+    }
+
+    &_img {
+        max-width: 100%;
+        margin: 10px auto;
+    }
+
+    &_text {
+        font-size: 14px;
+        margin-bottom: 10px;
+
+        &-italic {
+            font-style: italic;
+        }
+
+        &-bold {
+            font-weight: 600;
+        }
+    }
+}

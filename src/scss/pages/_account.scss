@@ -1,0 +1,496 @@
+.account {
+    min-height: 75vh;
+    @include flex(center, center);
+
+    &_header {
+        border-bottom: 1px solid #dde1ef;
+        padding: 12px 65px;
+        margin: 0;
+        position: relative;
+        @include flex(center, space-between);
+        line-height: 40px;
+
+        & > h5 {
+            color: $main-color;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        & > a,
+        & > button {
+            background-color: $main-color;
+            color: #fff;
+            height: 40px;
+            line-height: 40px;
+            padding: 0 13px;
+            border-radius: 5px;
+            font-weight: 700;
+        }
+
+        & > button {
+            @include flex(center,center);
+            cursor: pointer;
+        }
+
+        & > p {
+            font-size: 17px;
+            color: #7A7A9C;
+            font-weight: 500;
+        }
+    }
+
+    &_form {
+        width: 660px;
+        padding: 60px 100px;
+        background-color: #fff;
+
+        &_header {
+            @include flex(center, center);
+
+            & > a > svg {
+                padding-bottom: 9px;
+            }
+        }
+
+        &_title {
+            text-align: center;
+            font-weight: 700;
+            color: $main-color;
+            text-transform: uppercase;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        &_error,
+        &_success {
+            margin-bottom: 10px;
+            font-size: 13px;
+        }
+
+        &_error {
+            color: red;
+        }
+
+        &_success {
+            color: green;
+        }
+
+        &_btn {
+            @include flex(center, center);
+
+            & > button {
+                width: 100%;
+                padding: 12px 0;
+                border-radius: 3px;
+                cursor: pointer;
+                font-size: 17px;
+                background-color: $main-color;
+                color: #fff;
+
+                &.register {
+                    width: 200px;
+                }
+            }
+        }
+
+        &_link {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 13px;
+
+            & > a:hover {
+                color: $main-color;
+            }
+        }
+
+        &_interests {
+            margin-top: 10px;
+            margin-bottom: 10px;
+
+            & > span {
+                display: block;
+                text-align: center;
+                margin-bottom: 15px;
+                font-weight: 500;
+            }
+
+            &_list {
+                max-width: 92%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            &_item {
+                text-align: center;
+                background: #f2f2f2;
+                line-height: 35px;
+                padding: 0 12px;
+                border: 1px #f2f2f2 solid;
+                color: #7a7a9d;
+                border-radius: 4px;
+                position: relative;
+                font-size: 13px;
+                font-weight: 500;
+                cursor: pointer;
+
+                &.active {
+                    border-color: #fcaf17;
+                    background: transparent;
+                    overflow: hidden;
+                }
+
+                &.active::before {
+                    content: '';
+                    background: url('https://bizweb.sapocdn.net/100/438/408/themes/863105/assets/x-white.svg');
+                    color: #fff;
+                    position: absolute;
+                    width: 8px;
+                    height: 8px;
+                    top: 1px;
+                    right: 1px;
+                    z-index: 9;
+                    line-height: 1;
+                    font-size: 10px;
+                }
+
+                &.active::after {
+                    content: '';
+                    background: 0 0;
+                    height: 22px;
+                    width: 22px;
+                    position: absolute;
+                    top: -2px;
+                    right: -2px;
+                    transform: initial;
+                    border-left: 24px solid transparent;
+                    border-right: 0 solid transparent;
+                    border-top: 24px solid #fcaf17;
+                }
+            }
+        }
+    }
+
+    &-info {
+        background: #f8f8f8;
+        min-height: 75vh;
+        padding: 30px 0;
+
+        &_header {
+            @include flex(center, center);
+            flex-direction: column;
+            margin-bottom: 30px;
+
+            div {
+                font-weight: 500;
+                font-size: 15px;
+
+                & > span {
+                    padding: 0 10px;
+                }
+            }
+
+            h5 {
+                font-size: 22px;
+                color: $main-color;
+                text-transform: uppercase;
+            }
+        }
+
+        &_wrapper {
+            @include flex(flex-start, space-between);
+            gap: 30px;
+        }
+
+        &_sitebar,
+        &_content {
+            background: #fff;
+            min-height: 75vh;
+        }
+
+        &_sitebar {
+            flex: 1;
+            padding: 30px 0;
+
+            &_head {
+                @include flex(center, center);
+                flex-direction: column;
+                padding: 0 20px;
+
+                & > p {
+                    font-weight: 500;
+                    font-size: 13px;
+                    margin: 15px 0 5px;
+                }
+
+                & > button {
+                    width: 100%;
+                    border-radius: 12px;
+                    color: #fff;
+                    background-color: $main-color;
+                    line-height: 24px;
+                    cursor: pointer;
+                    font-size: 13px;
+                }
+            }
+
+            &_img > img {
+                height: 80px;
+            }
+
+            &_list {
+                margin-top: 30px;
+            }
+
+            &_item {
+                &.active,
+                &:hover {
+                    background-color: #fdeeea;
+
+                    & > a > p {
+                        color: $main-color;
+                    }
+                }
+
+                & > a {
+                    padding: 10px 20px;
+                    @include flex(center, flex-start);
+
+                    & > p {
+                        font-weight: 500;
+                    }
+
+                    & > img {
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+
+        &_content {
+            flex: 3;
+        }
+    }
+
+    &-my-account {
+        &_content {
+            padding: 20px 65px;
+            @include flex(center, space-between);
+            font-weight: 500;
+            font-size: 13px;
+        }
+    }
+
+    &-my-addresses {
+        &_list {
+            padding: 0 50px;
+        }
+
+        &_item {
+            padding: 15px 0;
+            position: relative;
+
+            & > * ~ * {
+                margin-top: 10px;
+            }
+
+            & > p {
+                font-size: 14px;
+                font-weight: 600;
+
+                & > strong {
+                    color: #7A7A9C;
+                    width: 150px;
+                    display: inline-block;
+                }
+            }
+
+            &_delete {
+                position:absolute;
+                top: 10px;
+                right: 20px;
+                cursor: pointer;
+                background-color: #FDEEEA;
+                color: $main-color;
+                border-radius: 4px;
+                padding: 5px 20px;
+                font-weight: 700;
+                font-size: 15px;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    &-my-orders {
+        text-align: center;
+        font-weight: 500;
+
+        &_table {
+            width: 100%;
+            border-spacing: 0px;
+            
+            &>thead {
+                height: 50px;
+                background-color: #F8F8F8;
+            }
+
+            &>tbody > tr >td {
+                border-top: 1px solid #dde1ef;
+            }
+        }
+    }
+
+    &-change-password {
+        &_form {
+            max-width:60%;
+            padding: 30px 50px;
+
+            &>div > label {
+                font-weight: 500;
+                margin-bottom: 10px;
+                display: block;
+            }
+
+            &_btn {
+                font-size: 18px;
+                @include flex(center, flex-start);
+                font-weight: 600;
+                margin-top: 20px;
+
+                & > a {
+                    color: $main-color;
+                    background-color: #FDEEEA;
+                    width: 160px;
+                    border-radius: 4px;
+                    display: block;
+                    text-align: center;
+                    line-height:44px;
+                    transition: all 0.2s ease;
+
+                    &:hover {
+                        background-color:$main-color;
+                        color: #fff;
+                    }
+                }
+
+                &>button {
+                    background-color:$main-color;
+                    color: #fff;
+                    border-radius: 4px;
+                    width: 200px;
+                    margin-left: 10px;
+                    line-height:42px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    &-my-like-products {
+        &_empty {
+            @include flex(center,center);
+            flex-direction: column;
+            gap: 10px;
+            padding-top: 150px;
+
+            &> p {
+                color: #7A7A9C;
+                font-weight: 500;
+                font-size: 15px;
+            }
+        }
+
+        &_content {
+            padding: 20px;
+
+            & > * ~ * {
+                margin-top: 15px;
+            }
+        }
+
+        &_item {
+            @include flex(flex-start,flex-start);
+            position: relative;
+
+            &_info {
+                & > a > h5 {
+                    font-size: 14px;
+                    font-weight: 600;
+                }
+
+                & > a:hover {
+                    color: $main-color;
+                }
+            }
+
+            &_btn {
+                position:absolute;
+                top: 5px;
+                right: 20px;
+
+                button {
+                    cursor: pointer;
+                    font-size: 15px;
+                    font-weight: 600;
+
+                    &:nth-child(1) {
+                        background-color: #FDEEEA;
+                        line-height:41px;
+                        padding: 0 25px;
+                        border-radius: 4px;
+                        color: $main-color;
+                        transition: all 0.2s ease;
+                    }
+                }
+            }
+
+            &_color,
+            &_size {
+                display: flex;
+                margin-top: 8px;
+                gap: 5px;
+            }
+
+            &_img {
+                height: 150px;
+                width: 120px;
+                margin-right: 10px;
+
+                & > a > img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            &_price {
+                margin-top: 10px;
+                @include flex(center,flex-start);
+                gap: 10px;
+                
+                & > div {
+                    margin-right: 5px;
+
+                    &:nth-child(1) {
+                        color: $main-color;
+                        font-weight: 600;
+                        font-size: 18px;
+                    }
+
+                    &:nth-child(2) {
+                        color: #7a7a9d;
+                        font-weight: 500;
+                        text-decoration: line-through;
+                    }
+
+                    &:nth-child(3) {
+                        color: red;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+}

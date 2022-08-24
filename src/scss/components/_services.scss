@@ -1,0 +1,23 @@
+.services {
+    padding: 17px 0;
+
+    &_item {
+        @include flex(center,flex-start);
+
+        &_icon {
+            margin-right: 10px;
+        }
+
+        &_content {
+            font-size: 16px;
+
+            &_text {
+                font-size: 14px;
+
+                span {
+                    color: $main-color;
+                }
+            }
+        }
+    }
+}

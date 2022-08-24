@@ -1,0 +1,168 @@
+.footer {
+    background-color: #1E1C56;
+    padding: 25px 0 0;
+    color: #ffffff;
+
+    &_wrapper {
+        @include flex(flex-start,space-between);
+        gap: 40px;
+        padding-bottom: 30px;
+        border-bottom: 1px solid rgba(255,255,255,.3);
+    }
+
+    &_block {
+
+        &_title {
+            margin-bottom: 12px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        &_about,
+        &_service { 
+            &_item {
+                font-size: 14px;
+                line-height: 28px;
+                font-size: 14px;
+
+                a:hover {
+                    color: #fcaf17;
+                }
+            }
+        }
+
+        &:nth-child(1) {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 33.333333%;
+            flex: 0 0 33.333333%;
+            max-width: 33.333333%;
+        }
+
+        &:nth-child(2) {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 16.666667%;
+            flex: 0 0 16.666667%;
+            max-width: 16.666667%;
+        }
+
+        &:nth-child(3) {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 16.666667%;
+            flex: 0 0 16.666667%;
+            max-width: 16.666667%;
+        }
+
+        &:nth-child(4) {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 33.333333%;
+            flex: 0 0 33.333333%;
+            max-width: 33.333333%;
+        }
+
+        &_slogan {
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        &_register-info {
+            h5 {
+                margin-bottom: 12px;
+                font-size: 14px;
+                font-weight: 500;
+            }
+
+            &_form {
+                border: 1px #fff solid;
+                border-radius: 4px;
+                overflow: hidden;
+                width: 475px;
+                position: relative;
+                max-width: 100%;
+                font-size: 15px;
+                margin-bottom: 30px;
+
+                input {
+                    height: 48px;
+                    margin: 0;
+                    color: #fff;
+                    background: rgba(255,255,255,.3);
+                    border: none;
+                    padding: 0 110px 0 20px;
+                    width: 100%;
+                    max-width: 100%;
+                    display: block;
+
+                    &::placeholder {
+                        color: #ffffff;
+                    }
+                }
+
+                button {
+                    background: #fff;
+                    color: #2d2c81;
+                    font-size: 16px;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    line-height: 48px;
+                    text-align: center;
+                    padding: 0 28px;
+                    border-radius: 0;
+                    cursor: pointer;
+                    transition: all 0.2s ease;
+
+                    &:hover {
+                        background-color: $main-color;
+                        color: #ffffff;
+                    }
+                }
+            }
+        }
+
+        &_social {
+            @include flex(center, flex-start);
+            gap: 10px;
+
+            a > img {
+                width: 40px;
+                height: 40px;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    transform: rotate(30deg);
+                }
+            }
+        }
+
+        &_item {
+            @include flex(center, flex-start);
+            gap: 10px;
+            margin-bottom: 10px;
+
+            &_icon {
+                min-width: 32px;
+                height: 32px;
+                border-radius: 100rem;
+                @include flex(center,center);
+                border: 1px #ffffff solid;
+            }
+
+            &_content {
+                p {
+                    width:250px;
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+
+    &_copyright {
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 20px;
+
+        span {
+            color: #fcaf17;
+        }
+    }
+}

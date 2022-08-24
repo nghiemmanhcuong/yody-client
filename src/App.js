@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import {useLocation} from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import Routers from './routers/Routers';
+import DocumentMeta from 'react-document-meta';
+
+import Topbar from './components/Topbar';
+import Header from './components/Header';
+import Footer from './components/Footer';
+
+const App = () => {
+    const location = useLocation();
+
+    return (
+        <DocumentMeta>
+            <div className='app'>
+                {location.pathname == '/' && <Topbar />}
+                {location.pathname !== '/checkout' && <Header />}
+                <Routers />
+                {location.pathname !== '/checkout' && <Footer />}
+            </div>
+        </DocumentMeta>
+    );
+};
 
 export default App;
